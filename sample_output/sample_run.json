@@ -1,0 +1,682 @@
+{
+  "rfp_run_id": "RFP-20261104-185443-6E2CB8",
+  "created_at": "2026-11-04T18:54:43+00:00",
+  "status": "COMPLETED",
+  "llm": {
+    "provider": "Offline heuristic (no API key - demo only)",
+    "model": "keyword-heuristic-v1",
+    "temperature": 0.0
+  },
+  "criteria": [
+    {
+      "criterion_id": 1,
+      "name": "Technical Capability",
+      "description": "Solution architecture, integrations with existing systems, scalability, performance and overall technical fit.",
+      "weight": 30.0,
+      "max_score": 10,
+      "is_active": 1
+    },
+    {
+      "criterion_id": 2,
+      "name": "Implementation Plan",
+      "description": "Timeline realism, milestones, staffing and team structure, delivery methodology and risk management plan.",
+      "weight": 20.0,
+      "max_score": 10,
+      "is_active": 1
+    },
+    {
+      "criterion_id": 3,
+      "name": "Commercial Value",
+      "description": "Pricing clarity, total cost of ownership, stated assumptions, payment terms and value for money.",
+      "weight": 20.0,
+      "max_score": 10,
+      "is_active": 1
+    },
+    {
+      "criterion_id": 4,
+      "name": "Security & Compliance",
+      "description": "Security controls, certifications (e.g. ISO 27001, SOC 2), data privacy, auditability and regulatory compliance.",
+      "weight": 20.0,
+      "max_score": 10,
+      "is_active": 1
+    },
+    {
+      "criterion_id": 5,
+      "name": "Support & Experience",
+      "description": "Support model and SLAs, relevant similar projects, client references and track record.",
+      "weight": 10.0,
+      "max_score": 10,
+      "is_active": 1
+    }
+  ],
+  "formulas": {
+    "absolute_score": "sum(score/max_score * weight) / sum(weights) * 100",
+    "benchmark": "max score per criterion across suppliers",
+    "gap": "supplier score - benchmark",
+    "relative_pct": "supplier score / benchmark * 100 (0 if benchmark is 0)",
+    "ppi": "sum(relative_pct * weight) / sum(weights)"
+  },
+  "suppliers": [
+    {
+      "supplier_name": "Apex Systems",
+      "submission_date": "2026-10-20",
+      "experience_rating": 4.2,
+      "file_name": "Apex_Systems_Proposal.pdf",
+      "file_sha256": "7b62121b1b8fe75d2e02b52fca7335b020a9a40f05c58ec1ed6324fd3865099a",
+      "page_count": 12,
+      "text_chars": 32602,
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "max_score": 10.0,
+          "score": 10.0,
+          "raw_score": 10,
+          "justification": "[Offline heuristic] 14/15 indicator terms found: api, architecture, cloud, data migration, event, failover, integration, kubernetes.",
+          "evidence": "Apex UtilityCloud: cloud-native billing and customer service platform",
+          "evidence_grounded": true,
+          "evidence_page": 1,
+          "validation_status": "ok",
+          "weight": 30.0,
+          "weighted_points": 30.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "is_benchmark_leader": true
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "max_score": 10.0,
+          "score": 10.0,
+          "raw_score": 10,
+          "justification": "[Offline heuristic] 14/15 indicator terms found: acceptance, cutover, fte, go-live, governance, hypercare, milestone, mitigation.",
+          "evidence": "40 weeks implementation plus 3-year subscription",
+          "evidence_grounded": true,
+          "evidence_page": 1,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 20.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "is_benchmark_leader": true
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "max_score": 10.0,
+          "score": 8.4,
+          "raw_score": 8.4,
+          "justification": "[Offline heuristic] 11/16 indicator terms found: annual, assumption, fixed, inr, payment, price, tco, total.",
+          "evidence": "INR 14.21 Cr (fixed price implementation), excludes GST",
+          "evidence_grounded": true,
+          "evidence_page": 1,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 16.8,
+          "benchmark": 8.4,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "is_benchmark_leader": true
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "max_score": 10.0,
+          "score": 10.0,
+          "raw_score": 10,
+          "justification": "[Offline heuristic] 14/15 indicator terms found: aes, audit, data residency, dpdp, encryption, incident response, iso 27001, mfa.",
+          "evidence": "We hold ISO 27001:2022 and SOC 2",
+          "evidence_grounded": true,
+          "evidence_page": 2,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 20.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "is_benchmark_leader": true
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "max_score": 10.0,
+          "score": 8.4,
+          "raw_score": 8.4,
+          "justification": "[Offline heuristic] 9/13 indicator terms found: 24x7, client, dedicated, escalation, implementations, reference, response time, sla.",
+          "evidence": "Relevant Experience and References",
+          "evidence_grounded": true,
+          "evidence_page": 2,
+          "validation_status": "ok",
+          "weight": 10.0,
+          "weighted_points": 8.4,
+          "benchmark": 8.4,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "is_benchmark_leader": true
+        }
+      ],
+      "risks": [
+        "Scored by offline keyword heuristic - verify with an LLM run."
+      ],
+      "overall_summary": "Heuristic keyword-coverage assessment of Apex Systems's proposal.",
+      "warnings": [],
+      "llm_raw_output": "{\"supplier_name\": \"Apex Systems\", \"criteria\": [{\"criterion_id\": 1, \"score\": 10, \"max_score\": 10, \"justification\": \"[Offline heuristic] 14/15 indicator terms found: api, architecture, cloud, data migration, event, failover, integration, kubernetes.\", \"evidence\": \"Apex UtilityCloud: cloud-native billing and customer service platform\"}, {\"criterion_id\": 2, \"score\": 10, \"max_score\": 10, \"justification\": \"[Offline heuristic] 14/15 indicator terms found: acceptance, cutover, fte, go-live, governance, hypercare, milestone, mitigation.\", \"evidence\": \"40 weeks implementation plus 3-year subscription\"}, {\"criterion_id\": 3, \"score\": 8.4, \"max_score\": 10, \"justification\": \"[Offline heuristic] 11/16 indicator terms found: annual, assumption, fixed, inr, payment, price, tco, total.\", \"evidence\": \"INR 14.21 Cr (fixed price implementation), excludes GST\"}, {\"criterion_id\": 4, \"score\": 10, \"max_score\": 10, \"justification\": \"[Offline heuristic] 14/15 indicator terms found: aes, audit, data residency, dpdp, encryption, incident response, iso 27001, mfa.\", \"evidence\": \"We hold ISO 27001:2022 and SOC 2\"}, {\"criterion_id\": 5, \"score\": 8.4, \"max_score\": 10, \"justification\": \"[Offline heuristic] 9/13 indicator terms found: 24x7, client, dedicated, escalation, implementations, reference, response time, sla.\", \"evidence\": \"Relevant Experience and References\"}], \"risks\": [\"Scored by offline keyword heuristic - verify with an LLM run.\"], \"overall_summary\": \"Heuristic keyword-coverage assessment of Apex Systems's proposal.\"}",
+      "absolute_score": 95.2,
+      "ppi": 100.0,
+      "final_rank": 1,
+      "rank_reason": "Highest PPI after applying the tie-break order."
+    },
+    {
+      "supplier_name": "NexaWorks",
+      "submission_date": "2026-10-20",
+      "experience_rating": 4.0,
+      "file_name": "NexaWorks_Proposal.pdf",
+      "file_sha256": "f5da0fcb4b4943f7a12aee12f59b69adb428aaa3ee4020850f4dd64209f23f93",
+      "page_count": 12,
+      "text_chars": 29623,
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "max_score": 10.0,
+          "score": 9.5,
+          "raw_score": 9.5,
+          "justification": "[Offline heuristic] 12/15 indicator terms found: api, architecture, cloud, data migration, event, failover, integration, kubernetes.",
+          "evidence": "NexaBill configurable utility billing product with managed cloud hosting",
+          "evidence_grounded": true,
+          "evidence_page": 1,
+          "validation_status": "ok",
+          "weight": 30.0,
+          "weighted_points": 28.5,
+          "benchmark": 10.0,
+          "gap": -0.5,
+          "relative_pct": 95.0,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "max_score": 10.0,
+          "score": 10.0,
+          "raw_score": 10,
+          "justification": "[Offline heuristic] 14/15 indicator terms found: acceptance, cutover, fte, go-live, governance, hypercare, milestone, mitigation.",
+          "evidence": "Timeline, Team Structure and Milestones",
+          "evidence_grounded": true,
+          "evidence_page": 2,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 20.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "is_benchmark_leader": true
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "max_score": 10.0,
+          "score": 8.4,
+          "raw_score": 8.4,
+          "justification": "[Offline heuristic] 11/16 indicator terms found: annual, assumption, fixed, inr, payment, price, tco, total.",
+          "evidence": "INR 10.40 Cr (fixed-price implementation), excludes GST",
+          "evidence_grounded": true,
+          "evidence_page": 1,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 16.8,
+          "benchmark": 8.4,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "is_benchmark_leader": true
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "max_score": 10.0,
+          "score": 9.5,
+          "raw_score": 9.5,
+          "justification": "[Offline heuristic] 12/15 indicator terms found: aes, audit, data residency, dpdp, encryption, incident response, iso 27001, mfa.",
+          "evidence": "ISO 27001 (2023); SOC 2 Type I completed, Type II in progress",
+          "evidence_grounded": true,
+          "evidence_page": 1,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 19.0,
+          "benchmark": 10.0,
+          "gap": -0.5,
+          "relative_pct": 95.0,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "max_score": 10.0,
+          "score": 8.4,
+          "raw_score": 8.4,
+          "justification": "[Offline heuristic] 9/13 indicator terms found: 24x7, account manager, client, customer success, dedicated, implementations, reference, sla.",
+          "evidence": "Dedicated 24x7 utility service desk",
+          "evidence_grounded": true,
+          "evidence_page": 1,
+          "validation_status": "ok",
+          "weight": 10.0,
+          "weighted_points": 8.4,
+          "benchmark": 8.4,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "is_benchmark_leader": true
+        }
+      ],
+      "risks": [
+        "Scored by offline keyword heuristic - verify with an LLM run."
+      ],
+      "overall_summary": "Heuristic keyword-coverage assessment of NexaWorks's proposal.",
+      "warnings": [],
+      "llm_raw_output": "{\"supplier_name\": \"NexaWorks\", \"criteria\": [{\"criterion_id\": 1, \"score\": 9.5, \"max_score\": 10, \"justification\": \"[Offline heuristic] 12/15 indicator terms found: api, architecture, cloud, data migration, event, failover, integration, kubernetes.\", \"evidence\": \"NexaBill configurable utility billing product with managed cloud hosting\"}, {\"criterion_id\": 2, \"score\": 10, \"max_score\": 10, \"justification\": \"[Offline heuristic] 14/15 indicator terms found: acceptance, cutover, fte, go-live, governance, hypercare, milestone, mitigation.\", \"evidence\": \"Timeline, Team Structure and Milestones\"}, {\"criterion_id\": 3, \"score\": 8.4, \"max_score\": 10, \"justification\": \"[Offline heuristic] 11/16 indicator terms found: annual, assumption, fixed, inr, payment, price, tco, total.\", \"evidence\": \"INR 10.40 Cr (fixed-price implementation), excludes GST\"}, {\"criterion_id\": 4, \"score\": 9.5, \"max_score\": 10, \"justification\": \"[Offline heuristic] 12/15 indicator terms found: aes, audit, data residency, dpdp, encryption, incident response, iso 27001, mfa.\", \"evidence\": \"ISO 27001 (2023); SOC 2 Type I completed, Type II in progress\"}, {\"criterion_id\": 5, \"score\": 8.4, \"max_score\": 10, \"justification\": \"[Offline heuristic] 9/13 indicator terms found: 24x7, account manager, client, customer success, dedicated, implementations, reference, sla.\", \"evidence\": \"Dedicated 24x7 utility service desk\"}], \"risks\": [\"Scored by offline keyword heuristic - verify with an LLM run.\"], \"overall_summary\": \"Heuristic keyword-coverage assessment of NexaWorks's proposal.\"}",
+      "absolute_score": 92.7,
+      "ppi": 97.5,
+      "final_rank": 2,
+      "rank_reason": "Below Apex Systems: higher PPI (100.00 vs 97.50)."
+    },
+    {
+      "supplier_name": "Orbit Digital",
+      "submission_date": "2026-10-22",
+      "experience_rating": 4.8,
+      "file_name": "Orbit_Digital_Proposal.pdf",
+      "file_sha256": "01b1a4d16a5e0259ae6d711a161bf9e2368499803134596783ffa125281d019f",
+      "page_count": 11,
+      "text_chars": 28249,
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "max_score": 10.0,
+          "score": 8.2,
+          "raw_score": 8.2,
+          "justification": "[Offline heuristic] 10/15 indicator terms found: architecture, cloud, data migration, event, integration, load, performance, rest.",
+          "evidence": "Proposed Solution and Architecture",
+          "evidence_grounded": true,
+          "evidence_page": 2,
+          "validation_status": "ok",
+          "weight": 30.0,
+          "weighted_points": 24.6,
+          "benchmark": 10.0,
+          "gap": -1.8,
+          "relative_pct": 82.0,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "max_score": 10.0,
+          "score": 8.8,
+          "raw_score": 8.8,
+          "justification": "[Offline heuristic] 11/15 indicator terms found: acceptance, cutover, fte, go-live, governance, milestone, mitigation, phase.",
+          "evidence": "Timeline, Team Structure and Milestones",
+          "evidence_grounded": true,
+          "evidence_page": 2,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 17.6,
+          "benchmark": 10.0,
+          "gap": -1.2,
+          "relative_pct": 88.0,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "max_score": 10.0,
+          "score": 7.1,
+          "raw_score": 7.1,
+          "justification": "[Offline heuristic] 9/16 indicator terms found: annual, assumption, fixed, inr, licen, payment, price, tco.",
+          "evidence": "INR 10.85 Cr (time and materials estimate)",
+          "evidence_grounded": true,
+          "evidence_page": 1,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 14.2,
+          "benchmark": 8.4,
+          "gap": -1.3,
+          "relative_pct": 84.5238,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "max_score": 10.0,
+          "score": 5.5,
+          "raw_score": 5.5,
+          "justification": "[Offline heuristic] 6/15 indicator terms found: audit, encryption, incident response, iso 27001, penetration, role-based.",
+          "evidence": "Orbit Digital is ISO 27001 certified.",
+          "evidence_grounded": true,
+          "evidence_page": 7,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 11.0,
+          "benchmark": 10.0,
+          "gap": -4.5,
+          "relative_pct": 55.0,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "max_score": 10.0,
+          "score": 8.4,
+          "raw_score": 8.4,
+          "justification": "[Offline heuristic] 9/13 indicator terms found: 24x7, account manager, client, dedicated, escalation, implementations, reference, response time.",
+          "evidence": "22 billing implementations, 14 utility clients",
+          "evidence_grounded": true,
+          "evidence_page": 1,
+          "validation_status": "ok",
+          "weight": 10.0,
+          "weighted_points": 8.4,
+          "benchmark": 8.4,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "is_benchmark_leader": true
+        }
+      ],
+      "risks": [
+        "Scored by offline keyword heuristic - verify with an LLM run."
+      ],
+      "overall_summary": "Heuristic keyword-coverage assessment of Orbit Digital's proposal.",
+      "warnings": [],
+      "llm_raw_output": "{\"supplier_name\": \"Orbit Digital\", \"criteria\": [{\"criterion_id\": 1, \"score\": 8.2, \"max_score\": 10, \"justification\": \"[Offline heuristic] 10/15 indicator terms found: architecture, cloud, data migration, event, integration, load, performance, rest.\", \"evidence\": \"Proposed Solution and Architecture\"}, {\"criterion_id\": 2, \"score\": 8.8, \"max_score\": 10, \"justification\": \"[Offline heuristic] 11/15 indicator terms found: acceptance, cutover, fte, go-live, governance, milestone, mitigation, phase.\", \"evidence\": \"Timeline, Team Structure and Milestones\"}, {\"criterion_id\": 3, \"score\": 7.1, \"max_score\": 10, \"justification\": \"[Offline heuristic] 9/16 indicator terms found: annual, assumption, fixed, inr, licen, payment, price, tco.\", \"evidence\": \"INR 10.85 Cr (time and materials estimate)\"}, {\"criterion_id\": 4, \"score\": 5.5, \"max_score\": 10, \"justification\": \"[Offline heuristic] 6/15 indicator terms found: audit, encryption, incident response, iso 27001, penetration, role-based.\", \"evidence\": \"Orbit Digital is ISO 27001 certified.\"}, {\"criterion_id\": 5, \"score\": 8.4, \"max_score\": 10, \"justification\": \"[Offline heuristic] 9/13 indicator terms found: 24x7, account manager, client, dedicated, escalation, implementations, reference, response time.\", \"evidence\": \"22 billing implementations, 14 utility clients\"}], \"risks\": [\"Scored by offline keyword heuristic - verify with an LLM run.\"], \"overall_summary\": \"Heuristic keyword-coverage assessment of Orbit Digital's proposal.\"}",
+      "absolute_score": 75.8,
+      "ppi": 80.1048,
+      "final_rank": 3,
+      "rank_reason": "Below NexaWorks: higher PPI (97.50 vs 80.10)."
+    },
+    {
+      "supplier_name": "BrightPath Tech",
+      "submission_date": "2026-10-18",
+      "experience_rating": 2.5,
+      "file_name": "BrightPath_Tech_Proposal.pdf",
+      "file_sha256": "ed95bcb88fa8c5c01f211a63862c1bad76fe6053449567a4c32bfb4e02417fe8",
+      "page_count": 11,
+      "text_chars": 28612,
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "max_score": 10.0,
+          "score": 8.8,
+          "raw_score": 8.8,
+          "justification": "[Offline heuristic] 11/15 indicator terms found: api, architecture, cloud, data migration, event, integration, load, performance.",
+          "evidence": "Proposed Solution and Architecture",
+          "evidence_grounded": true,
+          "evidence_page": 2,
+          "validation_status": "ok",
+          "weight": 30.0,
+          "weighted_points": 26.4,
+          "benchmark": 10.0,
+          "gap": -1.2,
+          "relative_pct": 88.0,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "max_score": 10.0,
+          "score": 5.5,
+          "raw_score": 5.5,
+          "justification": "[Offline heuristic] 6/15 indicator terms found: fte, go-live, governance, milestone, phase, week.",
+          "evidence": "Timeline, Team Structure and Milestones",
+          "evidence_grounded": true,
+          "evidence_page": 2,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 11.0,
+          "benchmark": 10.0,
+          "gap": -4.5,
+          "relative_pct": 55.0,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "max_score": 10.0,
+          "score": 6.5,
+          "raw_score": 6.5,
+          "justification": "[Offline heuristic] 8/16 indicator terms found: annual, assumption, fixed, inr, licen, payment, price, total.",
+          "evidence": "Commercial Proposal and Price Table",
+          "evidence_grounded": true,
+          "evidence_page": 2,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 13.0,
+          "benchmark": 8.4,
+          "gap": -1.9,
+          "relative_pct": 77.381,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "max_score": 10.0,
+          "score": 2.2,
+          "raw_score": 2.2,
+          "justification": "[Offline heuristic] 1/15 indicator terms found: iso 27001.",
+          "evidence": "planning to begin ISO 27001 certification next year.",
+          "evidence_grounded": true,
+          "evidence_page": 7,
+          "validation_status": "ok",
+          "weight": 20.0,
+          "weighted_points": 4.4,
+          "benchmark": 10.0,
+          "gap": -7.8,
+          "relative_pct": 22.0,
+          "is_benchmark_leader": false
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "max_score": 10.0,
+          "score": 5.3,
+          "raw_score": 5.3,
+          "justification": "[Offline heuristic] 5/13 indicator terms found: 24x7, client, reference, sla, years.",
+          "evidence": "Relevant Experience and References",
+          "evidence_grounded": true,
+          "evidence_page": 2,
+          "validation_status": "ok",
+          "weight": 10.0,
+          "weighted_points": 5.3,
+          "benchmark": 8.4,
+          "gap": -3.1,
+          "relative_pct": 63.0952,
+          "is_benchmark_leader": false
+        }
+      ],
+      "risks": [
+        "Scored by offline keyword heuristic - verify with an LLM run."
+      ],
+      "overall_summary": "Heuristic keyword-coverage assessment of BrightPath Tech's proposal.",
+      "warnings": [],
+      "llm_raw_output": "{\"supplier_name\": \"BrightPath Tech\", \"criteria\": [{\"criterion_id\": 1, \"score\": 8.8, \"max_score\": 10, \"justification\": \"[Offline heuristic] 11/15 indicator terms found: api, architecture, cloud, data migration, event, integration, load, performance.\", \"evidence\": \"Proposed Solution and Architecture\"}, {\"criterion_id\": 2, \"score\": 5.5, \"max_score\": 10, \"justification\": \"[Offline heuristic] 6/15 indicator terms found: fte, go-live, governance, milestone, phase, week.\", \"evidence\": \"Timeline, Team Structure and Milestones\"}, {\"criterion_id\": 3, \"score\": 6.5, \"max_score\": 10, \"justification\": \"[Offline heuristic] 8/16 indicator terms found: annual, assumption, fixed, inr, licen, payment, price, total.\", \"evidence\": \"Commercial Proposal and Price Table\"}, {\"criterion_id\": 4, \"score\": 2.2, \"max_score\": 10, \"justification\": \"[Offline heuristic] 1/15 indicator terms found: iso 27001.\", \"evidence\": \"planning to begin ISO 27001 certification next year.\"}, {\"criterion_id\": 5, \"score\": 5.3, \"max_score\": 10, \"justification\": \"[Offline heuristic] 5/13 indicator terms found: 24x7, client, reference, sla, years.\", \"evidence\": \"Relevant Experience and References\"}], \"risks\": [\"Scored by offline keyword heuristic - verify with an LLM run.\"], \"overall_summary\": \"Heuristic keyword-coverage assessment of BrightPath Tech's proposal.\"}",
+      "absolute_score": 60.1,
+      "ppi": 63.5857,
+      "final_rank": 4,
+      "rank_reason": "Below Orbit Digital: higher PPI (80.10 vs 63.59)."
+    }
+  ],
+  "benchmarks": [
+    {
+      "criterion_id": 1,
+      "name": "Technical Capability",
+      "benchmark_score": 10.0,
+      "leaders": [
+        "Apex Systems"
+      ],
+      "benchmark_zero": false
+    },
+    {
+      "criterion_id": 2,
+      "name": "Implementation Plan",
+      "benchmark_score": 10.0,
+      "leaders": [
+        "Apex Systems",
+        "NexaWorks"
+      ],
+      "benchmark_zero": false
+    },
+    {
+      "criterion_id": 3,
+      "name": "Commercial Value",
+      "benchmark_score": 8.4,
+      "leaders": [
+        "Apex Systems",
+        "NexaWorks"
+      ],
+      "benchmark_zero": false
+    },
+    {
+      "criterion_id": 4,
+      "name": "Security & Compliance",
+      "benchmark_score": 10.0,
+      "leaders": [
+        "Apex Systems"
+      ],
+      "benchmark_zero": false
+    },
+    {
+      "criterion_id": 5,
+      "name": "Support & Experience",
+      "benchmark_score": 8.4,
+      "leaders": [
+        "Apex Systems",
+        "NexaWorks",
+        "Orbit Digital"
+      ],
+      "benchmark_zero": false
+    }
+  ],
+  "tie_break_explanation": [
+    "#1 Apex Systems above #2 NexaWorks: higher PPI (100.00 vs 97.50).",
+    "#2 NexaWorks above #3 Orbit Digital: higher PPI (97.50 vs 80.10).",
+    "#3 Orbit Digital above #4 BrightPath Tech: higher PPI (80.10 vs 63.59)."
+  ],
+  "tie_break_order": [
+    "Higher PPI",
+    "Earlier submission date",
+    "Higher historical experience rating",
+    "Supplier name ascending"
+  ],
+  "warnings": [],
+  "trace": [
+    {
+      "step": "Input",
+      "tool": "InputValidator",
+      "status": "ok",
+      "detail": "4 supplier(s) accepted",
+      "duration_s": 0.0
+    },
+    {
+      "step": "Batch",
+      "tool": "BatchManager",
+      "status": "ok",
+      "detail": "RFP-20261104-185443-6E2CB8 created with 5 active criteria",
+      "duration_s": 0.002
+    },
+    {
+      "step": "Evaluate",
+      "tool": "DocumentTool",
+      "status": "ok",
+      "detail": "Apex Systems: 12 page(s), 32602 chars",
+      "duration_s": 0.109
+    },
+    {
+      "step": "Evaluate",
+      "tool": "EvaluationAgent",
+      "status": "ok",
+      "detail": "Apex Systems: keyword-heuristic-v1 responded in 0.0s",
+      "duration_s": 0.005
+    },
+    {
+      "step": "Validate",
+      "tool": "ValidationTool",
+      "status": "ok",
+      "detail": "Apex Systems: 0 correction(s)",
+      "duration_s": 0.013
+    },
+    {
+      "step": "Evaluate",
+      "tool": "DocumentTool",
+      "status": "ok",
+      "detail": "BrightPath Tech: 11 page(s), 28612 chars",
+      "duration_s": 0.075
+    },
+    {
+      "step": "Evaluate",
+      "tool": "EvaluationAgent",
+      "status": "ok",
+      "detail": "BrightPath Tech: keyword-heuristic-v1 responded in 0.0s",
+      "duration_s": 0.005
+    },
+    {
+      "step": "Validate",
+      "tool": "ValidationTool",
+      "status": "ok",
+      "detail": "BrightPath Tech: 0 correction(s)",
+      "duration_s": 0.012
+    },
+    {
+      "step": "Evaluate",
+      "tool": "DocumentTool",
+      "status": "ok",
+      "detail": "NexaWorks: 12 page(s), 29623 chars",
+      "duration_s": 0.108
+    },
+    {
+      "step": "Evaluate",
+      "tool": "EvaluationAgent",
+      "status": "ok",
+      "detail": "NexaWorks: keyword-heuristic-v1 responded in 0.0s",
+      "duration_s": 0.004
+    },
+    {
+      "step": "Validate",
+      "tool": "ValidationTool",
+      "status": "ok",
+      "detail": "NexaWorks: 0 correction(s)",
+      "duration_s": 0.012
+    },
+    {
+      "step": "Evaluate",
+      "tool": "DocumentTool",
+      "status": "ok",
+      "detail": "Orbit Digital: 11 page(s), 28249 chars",
+      "duration_s": 0.081
+    },
+    {
+      "step": "Evaluate",
+      "tool": "EvaluationAgent",
+      "status": "ok",
+      "detail": "Orbit Digital: keyword-heuristic-v1 responded in 0.0s",
+      "duration_s": 0.005
+    },
+    {
+      "step": "Validate",
+      "tool": "ValidationTool",
+      "status": "ok",
+      "detail": "Orbit Digital: 0 correction(s)",
+      "duration_s": 0.011
+    },
+    {
+      "step": "Score/Benchmark/Rank",
+      "tool": "RankingTool",
+      "status": "ok",
+      "detail": "ranked 4 supplier(s); leader Apex Systems",
+      "duration_s": 0.0
+    },
+    {
+      "step": "Persist",
+      "tool": "SQLite",
+      "status": "ok",
+      "detail": "4 rows + run JSON",
+      "duration_s": 0.002
+    }
+  ]
+}

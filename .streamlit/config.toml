@@ -1,0 +1,16 @@
+[theme]
+base = "light"
+primaryColor = "#0F7B6C"
+backgroundColor = "#F5F7F8"
+secondaryBackgroundColor = "#E8EEF1"
+textColor = "#14213D"
+borderColor = "#D5DCE1"
+showWidgetBorder = true
+baseRadius = "6px"
+font = "Public Sans:https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap"
+
+[server]
+maxUploadSize = 25
+
+[client]
+toolbarMode = "viewer"
