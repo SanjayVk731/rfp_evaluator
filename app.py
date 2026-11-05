@@ -110,6 +110,8 @@ with st.sidebar:
             st.caption(_secrets_hint(preset["secret"]))
             api_key = st.text_input(f"API key ({preset['secret']})", type="password",
                                     help="Used as soon as you paste it; there is no Save button. Kept only in this browser session.")
+            # tolerate a pasted secrets line: GEMINI_API_KEY = "..."
+            api_key = re.sub(r"^\s*[A-Za-z_]+\s*=\s*", "", api_key).strip().strip("\"'“”‘’").strip()
     else:
         st.info("Offline mode scores by keyword coverage so you can try the workflow without a key. "
                 "Use a real LLM for genuine evaluations.")
@@ -262,6 +264,7 @@ with tab_eval:
         st.warning(w)
 
     if st.button("Evaluate suppliers", type="primary", disabled=not suppliers or bool(errors)):
+        llm_error = ""
         with st.status("Evaluating…", expanded=True) as status:
             def on_step(step: str, detail: str) -> None:
                 st.write(f"**{step}** · {detail}")
@@ -275,12 +278,14 @@ with tab_eval:
                 for e in exc.errors:
                     st.error(e)
             except LLMError as exc:
-                status.update(label="Run stopped: the AI evaluator could not be reached", state="error")
-                st.error(f"{exc}\n\nThe run is saved as FAILED. Check the API key and model, then run again.")
+                status.update(label="Run stopped: the AI evaluator could not be reached", state="error", expanded=True)
+                llm_error = str(exc)
             except Exception as exc:  # noqa: BLE001
                 status.update(label="Run failed", state="error")
                 st.exception(exc)
-        if st.session_state.get("result") is not result:
+        if llm_error:  # outside the status box so it can't be collapsed away
+            st.error(f"{llm_error}\n\nThe run is saved as FAILED. Check the API key and model, then run again.")
+        elif st.session_state.get("result") is not result:
             st.rerun()  # redraw every tab with the new run
     if result:
         leader = result["suppliers"][0]
