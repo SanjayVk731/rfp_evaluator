@@ -66,6 +66,19 @@ def _secret(name: str) -> str:
     return value or os.environ.get(name, "")
 
 
+def _secrets_hint(name: str) -> str:
+    """Why the key wasn't found - names only, never values."""
+    try:
+        found = list(st.secrets.keys())
+    except FileNotFoundError:
+        return "No secrets are configured for this app."
+    except Exception:
+        return "The app's secrets could not be read: check they are valid TOML, e.g. NAME = \"value\" with quotes."
+    if not found:
+        return "No secrets are configured for this app."
+    return f"Secrets contain {', '.join(found)} but not {name}."
+
+
 def _guess_name(file_name: str) -> str:
     stem = os.path.splitext(file_name)[0]
     stem = re.sub(r"(?i)[_\- ]*(proposal|rfp|response|final|v\d+)$", "", stem)
@@ -88,6 +101,7 @@ with st.sidebar:
         if api_key:
             st.success(f"Using the API key from secrets ({preset['secret']}).")
         else:
+            st.caption(_secrets_hint(preset["secret"]))
             api_key = st.text_input(f"API key ({preset['secret']})", type="password",
                                     help="Kept only in this browser session. For deployment, add it to Streamlit secrets.")
     else:
