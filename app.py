@@ -75,11 +75,13 @@ def _secrets_hint(name: str) -> str:
             where = re.search(r"\(at line \d+, column \d+\)", str(exc))
             return ("The app's secrets are not valid TOML" + (f" {where.group(0)}" if where else "")
                     + ". Use NAME = \"value\" with straight double quotes.")
-        return "No secrets are configured for this app."
+        return ("No key saved in this app's secrets. Paste one below: it works immediately for your session, no save needed. "
+                "To save it for everyone: Manage app > Settings > Secrets.")
     except Exception:
         return "The app's secrets could not be read: check they are valid TOML, e.g. NAME = \"value\" with quotes."
     if not found:
-        return "No secrets are configured for this app."
+        return ("No key saved in this app's secrets. Paste one below: it works immediately for your session, no save needed. "
+                "To save it for everyone: Manage app > Settings > Secrets.")
     return f"Secrets contain {', '.join(found)} but not {name}."
 
 
@@ -107,7 +109,7 @@ with st.sidebar:
         else:
             st.caption(_secrets_hint(preset["secret"]))
             api_key = st.text_input(f"API key ({preset['secret']})", type="password",
-                                    help="Kept only in this browser session. For deployment, add it to Streamlit secrets.")
+                                    help="Used as soon as you paste it; there is no Save button. Kept only in this browser session.")
     else:
         st.info("Offline mode scores by keyword coverage so you can try the workflow without a key. "
                 "Use a real LLM for genuine evaluations.")
