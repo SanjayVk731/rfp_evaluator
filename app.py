@@ -70,7 +70,11 @@ def _secrets_hint(name: str) -> str:
     """Why the key wasn't found - names only, never values."""
     try:
         found = list(st.secrets.keys())
-    except FileNotFoundError:
+    except FileNotFoundError as exc:  # Streamlit also raises this for TOML syntax errors
+        if "parsing" in str(exc):
+            where = re.search(r"\(at line \d+, column \d+\)", str(exc))
+            return ("The app's secrets are not valid TOML" + (f" {where.group(0)}" if where else "")
+                    + ". Use NAME = \"value\" with straight double quotes.")
         return "No secrets are configured for this app."
     except Exception:
         return "The app's secrets could not be read: check they are valid TOML, e.g. NAME = \"value\" with quotes."
