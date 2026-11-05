@@ -4,7 +4,7 @@ An AI-assisted Streamlit application that reads supplier RFP proposals (PDF), sc
 configurable criteria stored in SQLite, benchmarks suppliers against their peers, and produces an
 explainable, deterministic leaderboard.
 
-**Live app:** `https://<your-app-name>.streamlit.app` (replace after deploying)
+**Live app:** https://rfp-evaluator-sanjay.streamlit.app
 
 | Layer | Technology |
 |---|---|
