@@ -14,8 +14,8 @@ from typing import Any
 import requests
 
 PROVIDER_PRESETS: dict[str, dict[str, str]] = {
-    "Groq (free tier)": {"kind": "openai", "base_url": "https://api.groq.com/openai/v1", "model": "llama-3.3-70b-versatile", "secret": "GROQ_API_KEY"},
-    "Google Gemini (free tier)": {"kind": "openai", "base_url": "https://generativelanguage.googleapis.com/v1beta/openai", "model": "gemini-2.5-flash", "secret": "GEMINI_API_KEY"},
+    "Google Gemini (free tier)": {"kind": "openai", "base_url": "https://generativelanguage.googleapis.com/v1beta/openai", "model": "gemini-flash-lite-latest", "secret": "GEMINI_API_KEY"},
+    "Groq (Dev tier; free tier is too small for 10+ page bids)": {"kind": "openai", "base_url": "https://api.groq.com/openai/v1", "model": "openai/gpt-oss-120b", "secret": "GROQ_API_KEY"},
     "OpenAI": {"kind": "openai", "base_url": "https://api.openai.com/v1", "model": "gpt-4o-mini", "secret": "OPENAI_API_KEY"},
     "OpenRouter": {"kind": "openai", "base_url": "https://openrouter.ai/api/v1", "model": "meta-llama/llama-3.3-70b-instruct", "secret": "OPENROUTER_API_KEY"},
     "Anthropic Claude": {"kind": "anthropic", "base_url": "https://api.anthropic.com/v1", "model": "claude-haiku-5-5", "secret": "ANTHROPIC_API_KEY"},

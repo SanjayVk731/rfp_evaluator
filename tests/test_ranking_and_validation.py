@@ -210,3 +210,10 @@ def test_prompt_injection_in_pdf_is_flagged():
     c.save()
     doc = extract_text(buf.getvalue(), "sneaky.pdf")
     assert any("instruction to the AI" in w and "page 1" in w for w in doc.warnings)
+
+
+def test_ellipsis_joined_quotes_are_grounded_fragment_by_fragment():
+    from core.validation_tool import evidence_in_document
+    doc = "Dedicated 24x7 utility service desk. Other text here. P1 Critical: 15 minutes response, 4 hours resolution."
+    assert evidence_in_document("Dedicated 24x7 utility service desk... P1 Critical: 15 minutes response", doc)
+    assert not evidence_in_document("Dedicated 24x7 utility service desk... we hold ISO 27001 certification", doc)

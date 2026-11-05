@@ -161,18 +161,20 @@ python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\a
 pip install -r requirements.txt
 
 python scripts/seed_db.py          # creates data/rfp_evaluation.db with the sample criteria
-pytest -q                          # 17 tests: formulas, tie-breaks, validation, grounding, failures
+pytest -q                          # 18 tests: formulas, tie-breaks, validation, grounding, failures
 streamlit run app.py
 ```
 
-**API key.** Get a free key from Groq (console.groq.com) or Google AI Studio (Gemini). Then either paste it into
+**API key.** Recommended: a free Google Gemini key from aistudio.google.com/apikey (`GEMINI_API_KEY`). Gemini's
+free tier reads a full 12-page proposal in one call, about 4 seconds per supplier. Groq's free tier caps requests at
+8,000 tokens per minute, which is smaller than one 12-page proposal, so Groq needs its paid Dev tier here. Either paste the key into
 the sidebar, or copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml` and fill it in. No key? Choose
 **Offline heuristic** in the sidebar to try the full workflow.
 
 CLI run (writes `sample_output/sample_run.json`; reads the key from the environment or `.streamlit/secrets.toml`):
 
 ```bash
-python scripts/run_sample.py --provider "Groq (free tier)"
+python scripts/run_sample.py --provider "Google Gemini (free tier)"
 python scripts/run_sample.py        # offline heuristic
 ```
 
@@ -180,7 +182,7 @@ python scripts/run_sample.py        # offline heuristic
 
 1. Push this folder to a **public GitHub repo**. `.gitignore` already excludes `secrets.toml` and the `.db` file.
 2. Go to share.streamlit.io, click **Create app**, pick the repo and branch, and set the main file to `app.py`.
-3. Open **Advanced settings → Secrets** and paste `GROQ_API_KEY = "gsk_..."`.
+3. Open **Advanced settings → Secrets** and paste `GEMINI_API_KEY = "..."`, then pick **Google Gemini (free tier)** in the sidebar.
 4. Click Deploy, then copy the public URL into this README and your submission.
 
 The database is created automatically on first start. Streamlit Cloud storage is ephemeral, so run history resets
@@ -258,7 +260,7 @@ and JSON/CSV downloads.
 | Peer ranking & tie-breaks (20) | `core/ranking_tool.py`: pure Python, 4-decimal rounding, stable sort, a sentence explaining every rank | `test_tie_break_order_all_four_rules`, `test_ranking_is_deterministic_regardless_of_input_order` |
 | SQLite & persistence (10) | `core/db.py`: criteria, runs (with criteria snapshot and full JSON), supplier results under one `RFP_RUN_ID`; failed runs kept as `FAILED` | History tab; `test_llm_outage_fails_the_run_instead_of_ranking_supplier_last` |
 | Streamlit UI (10) | `app.py`: Criteria, Suppliers, Leaderboard, Scorecards, Run details, History | Screenshots above |
-| Documentation & testing (5) | This README, 17 tests, synthetic 11–12 page proposals, `sample_output/sample_run.json` | `pytest -q` |
+| Documentation & testing (5) | This README, 18 tests, synthetic 11–12 page proposals, `sample_output/sample_run.json` | `pytest -q` |
 
 ## 13. Demo script (about 3 minutes)
 

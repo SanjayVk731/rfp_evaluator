@@ -76,6 +76,9 @@ UNGROUNDED_CAP = 0.5            # a claim the PDF doesn't back can earn at most 
 
 def evidence_in_document(evidence: str, document_text: str, min_overlap: float = 0.6) -> bool:
     """Grounding check: is the quoted evidence (approximately) present in the document?"""
+    parts = [p for p in re.split(r"\.\.\.|…", evidence) if p.strip()]
+    if len(parts) > 1:   # "quote A ... quote B": every fragment must be grounded on its own
+        return all(evidence_in_document(p, document_text, min_overlap) for p in parts)
     ev, doc = _norm(evidence), _norm(document_text)
     words = ev.split()
     if len(words) < MIN_EVIDENCE_WORDS:

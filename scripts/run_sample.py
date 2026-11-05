@@ -2,7 +2,7 @@
 
 Usage:
     python scripts/run_sample.py                                   # offline heuristic (no key)
-    GROQ_API_KEY=... python scripts/run_sample.py --provider "Groq (free tier)"
+    GEMINI_API_KEY=... python scripts/run_sample.py --provider "Google Gemini (free tier)"
 Writes the complete run JSON to sample_output/sample_run.json
 """
 import argparse
