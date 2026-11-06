@@ -5,6 +5,7 @@ configurable criteria stored in SQLite, benchmarks suppliers against their peers
 explainable, deterministic leaderboard.
 
 **Live app:** https://rfp-evaluator-sanjay.streamlit.app
+
 **Demo video (3 min, real Gemini run):** [docs/demo.mp4](docs/demo.mp4)
 
 | Layer | Technology |
